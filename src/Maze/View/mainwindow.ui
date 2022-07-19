@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:0.445055, x2:0.729, y2:0.44468, stop:0 rgba(134, 134, 134, 255), stop:1 rgba(87, 86, 86, 255));</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="DrawMaze" name="drawMazeArea" native="true">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>502</width>
+      <height>502</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>40</y>
+      <width>161</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="6" column="0" colspan="2">
+      <widget class="QPushButton" name="generateButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#generateButton
+{
+color:rgb(255, 255, 255);
+border:solid;
+border-radius:10px;
+border-color: rgb(255,255,255);
+border-width:1px;
+margin-top:10px;
+}
+QPushButton#generateButton:checked { background: rgb(83, 84, 85); }
+QPushButton#generateButton:pressed { background: rgb(83, 84, 85); }</string>
+       </property>
+       <property name="text">
+        <string>Generate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QSpinBox" name="mazeHeightBox">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="wrapping">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QSpinBox" name="vertBeginBox">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QLabel" name="labelRows">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+
+</string>
+       </property>
+       <property name="text">
+        <string>Rows:</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QSpinBox" name="horizBeginBox">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0" colspan="2">
+      <widget class="QLabel" name="labelBegin">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Begin Point:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0" colspan="2">
+      <widget class="QLabel" name="labelEnd">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string>End point:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QSpinBox" name="mazeWidthBox">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="0" colspan="2">
+      <widget class="QPushButton" name="findPathButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#findPathButton
+{
+color:rgb(255, 255, 255);
+border:solid;
+border-radius:10px;
+border-color: rgb(255,255,255);
+border-width:1px;
+margin-top:10px;
+}
+QPushButton#findPathButton:checked { background: rgb(83, 84, 85); }
+QPushButton#findPathButton:pressed { background: rgb(83, 84, 85); }</string>
+       </property>
+       <property name="text">
+        <string>Path</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="QPushButton" name="openButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="sizeIncrement">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>ArrowCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#openButton {
+color:rgb(255, 255, 255);
+border:solid;
+border-radius:10px;
+border-color: rgb(255,255,255);
+border-width:1px;
+margin-bottom:10px;
+}
+QPushButton#openButton:checked { background: rgb(83, 84, 85); }
+QPushButton#openButton:pressed { background: rgb(83, 84, 85); }</string>
+       </property>
+       <property name="text">
+        <string>Open File</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QSpinBox" name="horizEndBox">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QSpinBox" name="vertEndBox">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="QLabel" name="labelColumns">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Columns:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QPushButton" name="saveButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="sizeIncrement">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>ArrowCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#saveButton {
+color:rgb(255, 255, 255);
+border:solid;
+border-radius:10px;
+border-color: rgb(255,255,255);
+border-width:1px;
+margin-top:10px;
+}
+QPushButton#saveButton:checked { background: rgb(83, 84, 85); }
+QPushButton#saveButton:pressed { background: rgb(83, 84, 85); }</string>
+       </property>
+       <property name="text">
+        <string>Save to File</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DrawMaze</class>
+   <extends>QWidget</extends>
+   <header location="global">Maze/View/DrawMaze.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
